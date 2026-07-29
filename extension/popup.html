@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      font-family: Arial, sans-serif;
+      padding: 15px;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      font-size: 16px;
+      margin-top: 0;
+      color: #333;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #ff0000;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #cc0000;
+    }
+    #results {
+      margin-top: 15px;
+      display: none;
+    }
+    .stat {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+    .pos { color: #2e7d32; font-weight: bold; }
+    .neu { color: #f57c00; font-weight: bold; }
+    .neg { color: #c62828; font-weight: bold; }
+    #status {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h2>📊 Sentiment Analyzer</h2>
+  <button id="analyze-btn">Analyze Video Comments</button>
+  <div id="status"></div>
+
+  <div id="results">
+    <hr>
+    <div class="stat"><span>Total Analyzed:</span> <span id="total-count">0</span></div>
+    <div class="stat pos"><span>Positive:</span> <span id="pos-count">0</span></div>
+    <div class="stat neu"><span>Neutral:</span> <span id="neu-count">0</span></div>
+    <div class="stat neg"><span>Negative:</span> <span id="neg-count">0</span></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

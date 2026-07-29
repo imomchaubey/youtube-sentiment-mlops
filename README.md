@@ -1,0 +1,1 @@
+[![YouTube Sentiment MLOps CI](https://github.com/imomchaubey/youtube-sentiment-mlops/actions/workflows/ci.yml/badge.svg)](https://github.com/imomchaubey/youtube-sentiment-mlops/actions/workflows/ci.yml)

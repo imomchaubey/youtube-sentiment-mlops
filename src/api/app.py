@@ -1,14 +1,21 @@
 import os
 from typing import List
 import joblib
+import nltk
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from src.data.clean_text import clean_text
 
+# Ensure NLTK stopwords are downloaded on app startup
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
+
 app = FastAPI(title="YouTube Sentiment Analysis API", version="1.0")
 
-# Enable CORS so the Chrome Extension can talk to our local API
+# Enable CORS so the Chrome Extension can talk to our API
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

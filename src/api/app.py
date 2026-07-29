@@ -2,16 +2,18 @@ import os
 from typing import List
 import joblib
 import nltk
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-from src.data.clean_text import clean_text
 
-# Ensure NLTK stopwords are downloaded on app startup
+# 1. Download stopwords FIRST before importing clean_text
 try:
     nltk.data.find('corpora/stopwords')
 except LookupError:
     nltk.download('stopwords')
+
+# 2. Now safely import FastAPI and clean_text
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from src.data.clean_text import clean_text
 
 app = FastAPI(title="YouTube Sentiment Analysis API", version="1.0")
 
